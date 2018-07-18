@@ -1,0 +1,23 @@
+{
+  "name": "mongo-migrate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Renārs Vilnis <renars.vilnis@gmail.com> (https://renarsvilnis.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "2.16.0",
+    "glob": "7.1.2",
+    "jest": "23.4.1",
+    "lodash.merge": "4.6.1",
+    "mongodb": "3.1.1"
+  },
+  "devDependencies": {
+    "eslint": "5.1.0",
+    "eslint-config-renarsvilnis": "5.0.1"
+  }
+}
