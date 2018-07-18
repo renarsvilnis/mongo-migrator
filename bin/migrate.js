@@ -3,11 +3,8 @@
 const program = require('commander');
 
 const {version} = require('../package.json');
-const Migrator = require('../lib/Migrator');
+const Migrator = require('../lib');
 
-// ###########################################################################
-// Migrate UP
-// ###########################################################################
 // NOTES: future methods
 // https://www.youtube.com/watch?v=qwAEYnfC3K8
 // db:seed
@@ -29,6 +26,8 @@ async function initMigrator () {
   await migrator.connect();
 }
 
+// TODO: show optional variables and default values
+
 program
   .version(version)
   .description('Simple MongoDB Database migration manager')
@@ -40,9 +39,10 @@ program
 program
   .command('up')
   .description('Migrate database up')
-  .action(async (cmd) => {
-    await initMigrator(cmd);
-    // await up();
+  .action(async () => {
+    await initMigrator();
+    await migrator.up();
+    await migrator.close();
     process.exit(0);
   });
 
@@ -51,15 +51,24 @@ program
   .option('-a, --all', 'Remove all migrations')
   .description('Remove migrations')
   .action(async (cmd) => {
+    await initMigrator();
     const removeAllMigrations = !!cmd.all;
-    // await down(removeAllMigrations);
+    await migrator.down(removeAllMigrations);
+    await migrator.close();
     process.exit(0);
   });
 
-// error on unknown commands
-// program.on('command:*', function () {
-//   console.error('Invalid command: %s\nSee --help for a list of available commands.', program.args.join(' '));
-//   process.exit(1);
-// });
+// Show on unknown commands
+program.on('command:*', () => {
+  console.error('Invalid command: %s\nSee --help for a list of available commands.', program.args.join(' '));
+  process.exit(1);
+});
+
+// Show help if no command passed
+// Reference: https://github.com/tj/commander.js/issues/7#issuecomment-48854967
+if (!process.argv.slice(2).length) {
+  program.outputHelp();
+  process.exit(0);
+}
 
 program.parse(process.argv);
