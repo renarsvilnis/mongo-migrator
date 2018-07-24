@@ -26,14 +26,18 @@ async function initMigrator () {
   await migrator.connect();
 }
 
-// TODO: show optional variables and default values
+// function errorHandler (fnc) {
+//   return fnc.catch((err) => {
+//     console.error(err);
+//   });
+// }
 
 program
   .version(version)
   .description('Simple MongoDB Database migration manager')
   .option('-u, --url <value>', 'MongoDB connection url')
-  .option('-db, --database <value>', 'Database name')
-  .option('-col, --collection [value]', 'Collection name name')
+  .option('--db, --database <value>', 'Database name')
+  .option('--col, --collection [value]', 'Collection name name')
   .option('-s, --silent', 'Silence all console output');
 
 program
