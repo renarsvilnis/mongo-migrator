@@ -19,7 +19,8 @@
     "api",
     "cli",
     "command-line",
-    "mongodb-native"
+    "mongodb-native",
+    "node"
   ],
   "engines": {
     "node": ">=8.0.0"

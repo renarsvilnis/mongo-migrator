@@ -32,7 +32,7 @@ MongoDB `>=3.0.0`
 
 As mention before `mongo-migrator` can be used both trough command-line or as module. The command line has all the functionality, so using the library as a module is only needed if your project requires it.
 
-### Command-line
+### Common Usage (CLI)
 
 ```bash
 # Install all new migrations
@@ -50,7 +50,7 @@ mongo-migrator -h
 mongo-migrator --help
 ```
 
-### Module
+### Programmatic usage
 
 ```javascript
 const path = require('path');
