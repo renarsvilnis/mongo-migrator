@@ -1,7 +1,5 @@
 # mongo-migrator
 
-[![NPM](https://nodei.co/npm/mongo-migrator.png?downloads=true&downloadRank=true)](https://nodei.co/npm/mongo-migrator/)
-
 Yet another mongo migration toolset, but with a  focus on being easy to use and integrate.
 
 >  Ideal choice when you quickly and painlessly want to add migrations to a project.
@@ -15,6 +13,8 @@ Features:
 - Easily integratable into existing project
 - Configurable to your project structure
 - Can be used trough command-line or as a module
+
+[![NPM](https://nodei.co/npm/mongo-migrator.png?downloads=true&downloadRank=true)](https://nodei.co/npm/mongo-migrator/)
 
 ## Installation
 
