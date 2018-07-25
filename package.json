@@ -1,15 +1,45 @@
 {
   "name": "mongo-migrator",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "Yet another mongo migration toolset, but with a focus on being easy to use and integrate.",
+  "keywords": [
+    "database",
+    "mongodb",
+    "mongo",
+    "migrate",
+    "migration",
+    "migrations",
+    "migrator",
+    "db",
+    "seed",
+    "seeds",
+    "seeder",
+    "programatic",
+    "programable",
+    "api",
+    "cli",
+    "command-line",
+    "mongodb-native"
+  ],
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "author": "Renārs Vilnis <renars.vilnis@gmail.com> (https://renarsvilnis.com/)",
   "license": "MIT",
-  "main": "lib/index.js",
+  "bugs": {
+    "url": "https://github.com/renarsvilnis/mongo-migrator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/renarsvilnis/mongo-migrator.git"
+  },
+  "bin": "./bin/mongo-migrator",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "jest lib",
     "test:up": "./bin/migrate.js up --url mongodb://127.0.0.1:27017 --db migrator-test"
   },
+  
   "dependencies": {
     "commander": "2.16.0",
     "glob": "7.1.2",
